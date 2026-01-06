@@ -4,4 +4,4 @@
 - Lit review on other methods (time series?)
 
 
-Note: need to check if I can use scikit-learn module --> otherwise, will need to implement the Linear Regression model manually
+Note: need to check if I can use scikit-learn package --> otherwise, will need to implement the Linear Regression model manually
