@@ -43,6 +43,33 @@ def create_lagged_features(df, lags: list):
     df_lagged = df_lagged.dropna().reset_index(drop=True)
     return df_lagged
 
+def create_temp_df():
+    temp_df = pd.read_csv("../data/NH.Ts+dSST.csv", skiprows=1) #skipping header row
+
+    temp_df = temp_df.melt(
+        id_vars="Year", 
+        value_vars = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        var_name="Month", 
+        value_name="Temp Anomaly"
+    )
+
+    temp_df["Month"] = temp_df["Month"].map({
+        "Jan": 1,
+        "Feb": 2,
+        "Mar": 3,
+        "Apr": 4,
+        "May": 5,
+        "Jun": 6,
+        "Jul": 7,
+        "Aug": 8,
+        "Sep": 9,
+        "Oct": 10,
+        "Nov": 11,
+        "Dec": 12
+    })
+
+    return temp_df
+
 def merge_temperature_data(SIE_df, temp_df, temp_columns: list, temp_column_names: list = None):
     
     for col in temp_columns:

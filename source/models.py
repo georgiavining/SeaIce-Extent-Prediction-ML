@@ -16,7 +16,4 @@ def linear_regression(X_train, y_train, X_test, y_test):
     y_pred = X_test_design @ beta
 
     return y_pred.flatten()
-
-
-def decision_tree(X_train, y_train, X_test, y_test):
-    pass
+    
