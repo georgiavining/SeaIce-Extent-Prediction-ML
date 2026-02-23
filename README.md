@@ -116,6 +116,10 @@ The project uses standard Python data science libraries:
 
 ---
 
+## Notes
+
+- This project was completed as part of **MSc Machine Learning in Science** coursework.
+
 
 
 
